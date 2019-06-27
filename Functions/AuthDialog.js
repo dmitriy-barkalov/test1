@@ -7,10 +7,11 @@
             var params = parseParameters(window.location.hash.substring(1));
 
             if (params.initialize) {
+                var redirectUrl = encodeURIComponent(window.location.origin + window.location.pathname);
                 var initialUrl = 'https://accounts.google.com/o/oauth2/v2/auth?' +
                     'scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive.metadata.readonly&' +
                     'include_granted_scopes=true&' +
-                    'redirect_uri=' + window.location.origin + window.location.pathname + '&' +
+                    'redirect_uri=' + redirectUrl + '&' +
                     'response_type=token&' +
                     'client_id=478306342633-o9go66u2bf65atn2lgmcfjlcbo9h66ag.apps.googleusercontent.com';
 
